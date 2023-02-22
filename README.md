@@ -1,8 +1,9 @@
 # Nextra Docs Template 
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+This is a template for creating a **ChatGPT-powered QA documentation** with [Nextra](https://nextra.site)  thanks to [Embedbase](https://embedbase.xyz) and [OpenAI](https://openai.com).
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+
+[**Live Demo →**](https://embedbase-nextra-docs-template.vercel.app/)
 
 [![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
 
