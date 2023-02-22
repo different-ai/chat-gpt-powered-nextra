@@ -15,6 +15,6 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-      - run: node scripts/sync.ts
+      - run: node scripts/sync.js
         env:
           EMBEDBASE_API_KEY: ${{ secrets.EMBEDBASE_API_KEY }}
