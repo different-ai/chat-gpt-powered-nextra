@@ -3,7 +3,7 @@ const fs = require("fs");
 const fetch = require("node-fetch");
 
 const url = "https://embedbase-hosted-usx5gpslaq-uc.a.run.app";
-const vaultId = "doc";
+const vaultId = "documentation";
 const apiKey = process.env.EMBEDBASE_API_KEY;
 const sync = async () => {
     // read all files under pages/* with .mdx extension

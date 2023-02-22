@@ -1,6 +1,6 @@
 
 const url = "https://embedbase-hosted-usx5gpslaq-uc.a.run.app";
-const vaultId = "doc";
+const vaultId = "documentation";
 const apiKey = process.env.EMBEDBASE_API_KEY;
 
 export default async function search(req, res) {
