@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import ReactMarkdown from 'react-markdown';
 
 const Modal = ({ children, open, onClose }) => {
   if (!open) return null;
@@ -98,13 +99,23 @@ const SearchModal = () => {
     e.preventDefault();
     setLoading(true);
     setOutput("");
-    const response = await fetch("/api/qa", {
+    const promptResponse = await fetch("/api/buildPrompt", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         prompt,
+      }),
+    });
+    const promptData = await promptResponse.json();
+    const response = await fetch("/api/qa", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt: promptData.prompt,
       }),
     });
     console.log("Edge function returned.");
@@ -152,7 +163,9 @@ const SearchModal = () => {
         </div>
       }
 
-      <p>{output}</p>
+      <div style={{ padding: '2rem' }}>
+        <ReactMarkdown>{output}</ReactMarkdown>
+      </div>
 
       <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0', fontSize: '0.75rem' }}>

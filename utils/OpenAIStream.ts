@@ -21,7 +21,6 @@ import {
     const decoder = new TextDecoder();
   
     let counter = 0;
-    console.log("payload", payload);
     const res = await fetch("https://api.openai.com/v1/completions", {
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +29,6 @@ import {
       method: "POST",
       body: JSON.stringify(payload),
     });
-    console.log("res", res);
     const stream = new ReadableStream({
       async start(controller) {
         // callback
