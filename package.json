@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "embedbase-nextra-docs-template",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Embedbase Nextra docs template",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/another-ai/embedbase-nextra-docs-template.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Embedbase",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/another-ai/embedbase-nextra-docs-template/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/another-ai/embedbase-nextra-docs-template#readme",
   "dependencies": {
     "@dqbd/tiktoken": "^0.2.1",
     "eventsource-parser": "^0.1.0",

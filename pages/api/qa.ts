@@ -6,7 +6,7 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 export const config = {
-      runtime: "experimental-edge",
+    runtime: "experimental-edge",
 };
 
 
