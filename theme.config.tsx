@@ -38,7 +38,7 @@ const SearchBar = () => {
       margin: 0,
       boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     }}>
-      {Object.values(results).map((result: any) => (
+      {Object.values(results)?.map((result: any) => (
         <li key={result.id}>
           {/* overflow ellipsis */}
           <a href={result.id}>{result.data?.slice(0, 10)}...</a>
