@@ -5,7 +5,7 @@ This is a template for creating a **ChatGPT-powered QA documentation** with [Nex
 
 [**Live Demo →**](https://embedbase-nextra-docs-template.vercel.app/)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+[![](.github/screenshot.png)](embedbase-nextra-docs-template.vercel.app/)
 
 ## Quick Start
 
