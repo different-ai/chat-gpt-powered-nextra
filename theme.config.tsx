@@ -15,7 +15,7 @@ const SearchBar = () => {
       body: JSON.stringify({ query })
     })
     .then(response => response.json())
-    .then((data) => setResults(
+    .then((data: any) => setResults(
       // similaritties: [{id: data}, {id2: data2}, ...]
       // to {id: data, id2: data2, ...}
       Object.assign({}, ...data.similarities.map((item: any) => ({[item.id]: item})))));
@@ -38,7 +38,7 @@ const SearchBar = () => {
       margin: 0,
       boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     }}>
-      {Object.values(results).map((result) => (
+      {Object.values(results).map((result: any) => (
         <li key={result.id}>
           {/* overflow ellipsis */}
           <a href={result.id}>{result.data?.slice(0, 10)}...</a>
