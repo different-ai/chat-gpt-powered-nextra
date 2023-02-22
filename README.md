@@ -6,7 +6,7 @@ This is a template for creating a **ChatGPT-powered QA documentation** with [Nex
 ## How it works
 
 * we index `.mdx` files with [Embedbase](https://github.com/another-ai/embedbase)
-* when you search, we use semantic search to find the most relevant snippets
+* when you search, we use semantic search with [Embedbase](https://github.com/another-ai/embedbase) to find the most relevant snippets
 * we then ask GPT-3 to give a summary of the snippets
 
 
