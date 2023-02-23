@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig, useTheme } from 'nextra-theme-docs'
 import ReactMarkdown from 'react-markdown';
 
 const Modal = ({ children, open, onClose }) => {
+  const theme = useTheme();
   if (!open) return null;
   return (
     <div
@@ -23,7 +24,7 @@ const Modal = ({ children, open, onClose }) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          backgroundColor: 'white',
+          backgroundColor: theme.theme === 'dark' ? '#1a1a1a' : 'white',
           padding: 20,
           borderRadius: 5,
           width: '80%',
