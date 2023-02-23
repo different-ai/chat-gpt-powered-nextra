@@ -183,14 +183,14 @@ const SearchModal = () => {
 const config: DocsThemeConfig = {
   logo: <span>My Project</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/another-ai/chat-gpt-powered-nextra',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/DYE6VFTJET',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/another-ai/chat-gpt-powered-nextra',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'ChatGPT-powered QA documentation Template',
   },
   search: {
     component: <SearchModal />
