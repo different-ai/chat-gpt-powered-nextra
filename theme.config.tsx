@@ -42,15 +42,10 @@ const Modal = ({ children, open, onClose }) => {
 
 
 const questions = [
-  'How do I get started with Supabase?',
-  'How do I run Supabase locally?',
-  'How do I connect to my database?',
-  'How do I run migrations? ',
-  'How do I listen to changes in a table?',
-  'How do I setup authentication?',
+  'How do I get started with Nextra?',
 ]
 
-interface NiceSearchBarProps {
+interface EmbedbaseSearchBarProps {
   value?: string;
   onChange?: (e: any) => void;
   autoFocus?: boolean;
@@ -58,28 +53,20 @@ interface NiceSearchBarProps {
   onClick?: () => void;
 }
 
-const NiceSearchBar = ({value, onChange, autoFocus, placeholder, onClick}: NiceSearchBarProps) => {
+const EmbedbaseSearchBar = ({ value, onChange, autoFocus, placeholder, onClick }: EmbedbaseSearchBarProps) => {
   return (
-    // a magnifier icon on the left
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <svg width="1rem" height="1rem" viewBox="0 0 16 16" className="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fillRule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-        <path fillRule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13z" />
-      </svg>
-
-      <input
-        autoFocus={autoFocus || false}
-        placeholder={placeholder || "Search..."}
-        onClick={onClick}
-        type="text"
-        value={value}
-        onChange={onChange}
-        // border around with smooth corners, a magnifier icon on the left,
-        // the search bar taking up the rest of the space
-        // focused on load
-        style={{ width: '100%', padding: '0.5rem', border: '1px solid #e5e7eb', borderRadius: '0.5rem', outline: 'none' }}
-      />
-    </div>
+    <input
+      autoFocus={autoFocus || false}
+      placeholder={placeholder || "Search..."}
+      onClick={onClick}
+      type="text"
+      value={value}
+      onChange={onChange}
+      // border around with smooth corners, a magnifier icon on the left,
+      // the search bar taking up the rest of the space
+      // focused on load
+      style={{ width: '100%', padding: '0.5rem', border: '1px solid #e5e7eb', borderRadius: '0.5rem', outline: 'none' }}
+    />
   );
 }
 
@@ -119,7 +106,6 @@ const SearchModal = () => {
         prompt: promptData.prompt,
       }),
     });
-    console.log("Edge function returned.");
     setLoading(false);
 
     if (!response.ok) {
@@ -149,28 +135,86 @@ const SearchModal = () => {
   // on open, show a modal with a form to enter a prompt
   return <div>
     {/* on click, open modal */}
-    <NiceSearchBar onClick={() => setOpen(true)} placeholder="Ask a question..." />
+    <EmbedbaseSearchBar onClick={() => setOpen(true)} placeholder="Ask a question..." />
     <Modal open={open} onClose={onClose}>
-      <form onSubmit={qa}>
-        <NiceSearchBar value={prompt} onChange={(e) => setPrompt(e.target.value)} autoFocus />
-        {/* <button type="submit">Ask</button> */}
+      <form onSubmit={qa} className="nx-flex nx-gap-3">
+        <EmbedbaseSearchBar value={prompt} onChange={(e) => setPrompt(e.target.value)} autoFocus />
+        <button
+          className="nx-rounded-full nx-bg-sky-300 nx-py-2 nx-px-4 nx-text-sm nx-font-semibold nx-text-slate-900 nx-hover:nx-bg-sky-200 nx-focus:outline-none focus-visible:outline-2 focus-visible:nx-outline-offset-2 nx-focus-visible:nx-outline-sky-300/50 nx-active:bg-sky-500 nx-max-w-max"
+          type="submit"
+        >
+          Ask
+        </button>
       </form>
-      {/* a spinner alongside a "loading" label when loading */}
-      {/* the spinner is centered vertically and horizontally in the parent */}
-      {loading && 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span>Loading...</span>
-          <div style={{ width: '1rem', height: '1rem', border: '1px solid #e5e7eb', borderRadius: '50%', borderTopColor: 'black', animation: 'spin 1s linear infinite' }}></div>
-        </div>
-      }
+      <div className="nx-flex nx-gap-3 nx-py-4 nx-items-center nx-min-h-40">
+        {!loading && output.length < 1 && (
+          <div className="nx-text-gray-400	nx-text-sm nx-font-semibold">
+            Your result will appear here
+          </div>
+        )}
+        {loading && (
+          <>
+            <span>Loading...</span>
+            <div
+              style={{
+                width: "1rem",
+                height: "1rem",
+                border: "1px solid #e5e7eb",
+                borderRadius: "50%",
+                borderTopColor: "black",
+                animation: "spin 1s linear infinite",
+              }}
+            ></div>
+          </>
+        )}
 
-      <div style={{ padding: '2rem' }}>
-        <ReactMarkdown>{output}</ReactMarkdown>
+        {!loading && output.length > 0 && (
+          <ReactMarkdown>{output}</ReactMarkdown>
+        )}
       </div>
 
-      <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0', fontSize: '0.75rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', paddingTop: '0.5rem', paddingBottom: '0.25rem' }}>
+      <div
+        style={{
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "1rem",
+        }}
+      >
+        {/* try one of these samples */}
+        <div className="nx-mt-2 ">Try one of these samples:</div>
+        <div
+          style={{
+            cursor: "pointer",
+            fontSize: "0.9rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            fontWeight: 600,
+          }}
+        >
+          {questions.map((q) => (
+            <div key={q} onClick={() => setPrompt(q)}>
+              {q}
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0.5rem 0",
+            fontSize: "0.75rem",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.25rem",
+              paddingTop: "0.5rem",
+              paddingBottom: "0.25rem",
+            }}
+          >
             <a href="https://embedbase.xyz" className="underline">
               Powered by Embedbase
             </a>

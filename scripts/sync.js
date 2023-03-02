@@ -13,7 +13,6 @@ const sync = async () => {
         // content of the file
         data: fs.readFileSync(path, "utf-8")
     }));
-    console.log(documents);
     const response = await fetch(url + "/v1/" + vaultId, {
         method: "POST",
         headers: {
@@ -25,7 +24,6 @@ const sync = async () => {
         })
     });
     const data = await response.json();
-    console.log(data);
 }
 
 sync();

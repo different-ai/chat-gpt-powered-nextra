@@ -20,16 +20,16 @@
   "dependencies": {
     "@dqbd/tiktoken": "^0.2.1",
     "eventsource-parser": "^0.1.0",
-    "next": "^13.0.6",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
-    "openai": "^3.1.0",
+    "next": "^13.1.0",
+    "nextra": "2.2.14",
+    "nextra-theme-docs": "2.2.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.5"
   },
   "devDependencies": {
     "@types/node": "18.11.10",
+    "@types/react": "^18.0.28",
     "glob": "^8.1.0",
     "node-fetch": "^2.6.9",
     "typescript": "^4.9.3"
