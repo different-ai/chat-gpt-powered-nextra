@@ -5,6 +5,7 @@ specifiers:
   '@types/node': 18.11.10
   '@types/react': ^18.0.28
   '@types/react-syntax-highlighter': ^15.5.6
+  dotenv: ^16.0.3
   eventsource-parser: ^0.1.0
   glob: ^8.1.0
   next: ^13.1.0
@@ -34,6 +35,7 @@ devDependencies:
   '@types/node': 18.11.10
   '@types/react': 18.0.28
   '@types/react-syntax-highlighter': 15.5.6
+  dotenv: 16.0.3
   glob: 8.1.0
   node-fetch: 2.6.9
   typescript: 4.9.3
@@ -606,6 +608,11 @@ packages:
     resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
     engines: {node: '>=0.3.1'}
     dev: false
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
 
   /escape-string-regexp/1.0.5:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}

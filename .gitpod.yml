@@ -12,3 +12,22 @@ tasks:
     command: |
       eval $(gp env -e)
       echo "$EMBEDBASE_DOCS" | tr ' ' '\n' > .env
+
+vscode:
+  # list as bullet points installed extensions:
+  # code --list-extensions | xargs -L 1 echo - 
+  extensions:
+    - github.copilot
+    - toba.vsfire
+    - wix.vscode-import-cost
+    - aaron-bond.better-comments
+    - perkovec.emoji
+    - k--kato.intellij-idea-keybindings
+    - christian-kohler.npm-intellisense
+    - dbaeumer.vscode-eslint
+    - unifiedjs.vscode-mdx
+
+
+ports:
+  - port: 3000
+    visibility: public
