@@ -1,0 +1,22 @@
+name: Reset index manually
+# HACK: in the future it would delete from index moved/deleted
+# files according to the git diff, but for now it just resets
+# manually using workflow_dispatch
+on:
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: npm install
+      - run: node scripts/clear.js
+        env:
+          EMBEDBASE_API_KEY: ${{ secrets.EMBEDBASE_API_KEY }}
+      - run: node scripts/sync.js
+        env:
+          EMBEDBASE_API_KEY: ${{ secrets.EMBEDBASE_API_KEY }}

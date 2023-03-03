@@ -8,4 +8,7 @@ tasks:
   - init: pnpm install && pnpm run build
     command: pnpm dev
 
-
+  - name: Generate config
+    command: |
+      eval $(gp env -e)
+      echo "$EMBEDBASE_DOCS" | tr ' ' '\n' > .env
