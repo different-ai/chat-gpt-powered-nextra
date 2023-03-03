@@ -41,7 +41,7 @@ const sync = async () => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            documents: documents
+            documents: chunks
         })
     });
     const data = await response.json();
