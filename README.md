@@ -1,21 +1,16 @@
 # Embedbase Nextra Template
 
-This is a template for creating a **ChatGPT-powered QA documentation** with [Nextra](https://nextra.site)  thanks to [Embedbase](https://embedbase.xyz) and [OpenAI](https://openai.com).
+This is a template for creating a **ChatGPT-powered QA documentation** with [Nextra](https://nextra.site)  thanks to [Embedbase](https://github.com/different-ai/embedbase) and [OpenAI](https://openai.com).
 
+You can try a production version of this used by Embedbase [here](https://docs.embedbase.xyz) which is [open-source](https://github.com/different-ai/embedbase-docs).
 
 ## How it works
 
-* we index `.mdx` files with [Embedbase](https://github.com/another-ai/embedbase)
+* we index `.mdx` files with [Embedbase](https://github.com/different-ai/embedbase)
 * when you search, we use semantic search with [Embedbase](https://github.com/another-ai/embedbase) to find the most relevant snippets
-* we then ask GPT-3 to give a summary of the snippets
+* we then ask GPT-4 to give a summary of the snippets
 
-
-![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/11430621/220747631-f69cf532-e464-4ec1-ac04-75018f77d561.gif)
-
-
-[**Live Demo →**](https://embedbase-nextra-docs-template.vercel.app/)
-
-[![](.github/screenshot.png)](https://embedbase-nextra-docs-template.vercel.app/)
+![New Recording Mar 16 2023 0931 PM](https://user-images.githubusercontent.com/25003283/228199333-478b2fb5-d1d4-4b69-8444-4fd795846cd1.gif)
 
 ## Quick Start
 
