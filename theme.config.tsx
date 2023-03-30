@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DocsThemeConfig, useTheme } from 'nextra-theme-docs'
+import { DocsThemeConfig, useTheme, useConfig } from 'nextra-theme-docs'
 import ReactMarkdown from 'react-markdown';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
@@ -303,6 +303,20 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/another-ai/chat-gpt-powered-nextra',
   footer: {
     text: 'ChatGPT-powered QA documentation Template',
+  },
+  feedback: {
+    content: 'Question? Give us feedback →',
+    labels: 'feedback',
+    useLink() {
+      const config = useConfig()
+      return `https://github.com/different-ai/chat-gpt-powered-nextra/issues/new?title=${encodeURIComponent(
+        `Feedback for "${config.title}"`
+        
+      )}`
+    }
+  },
+  editLink: {
+    text: 'Edit this page on GitHub →'
   },
   search: {
     component: <SearchModal />
